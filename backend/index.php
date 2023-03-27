@@ -62,6 +62,7 @@ if (isset($_POST['login'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Sign In</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
 
     <link rel="icon" href="../assets/imgs/logo.jpg" type="image/icon type">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -87,7 +88,7 @@ if (isset($_POST['login'])) {
      ?>
    </div>
    <div class="logo">
-        <a href="#" class="navbar-brand" style="font-family:'Dancing Script';font-size: 30px;"><b>Kids Computer Entertainment System</b></a>
+       <a href="#" class="navbar-brand" style="font-family:'Dancing Script';font-size: 30px;"><b>Kids Computer Entertainment System</b></a>
     </div>
     
     <div class="vh-100 d-flex justify-content-center align-items-center" style="margin-top:-80px;" id="SignIn">

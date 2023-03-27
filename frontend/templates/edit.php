@@ -9,7 +9,7 @@ header("refresh: 0, ../");
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bikers & Hikers</title>
+  <title>Kids Computer Entertainment System</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -18,6 +18,9 @@ header("refresh: 0, ../");
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
   <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+
+  <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+  <link rel="icon" href="../../assets/imgs/logo.jpg" type="image/icon type">
 </head>
 
 <style>body {
@@ -46,11 +49,27 @@ header("refresh: 0, ../");
         .dropdown-toggle::after {
             content: none;
             display: none;
-        }</style>
+        }
+        .button{
+         height:auto;
+         padding:6px 20px;
+         text-align:center;
+         opacity: 1;
+         background: aqua;
+         color:black;
+         border-radius:25px;
+        }
+        @media screen and (max-width: 600px){
+            .top-post{
+                margin-top:10px;
+                margin-bottom:10px;
+            }
+        }
+        </style>
 <body>
        
-<nav class="navbar navbar-light bg-white">
-        <a href="#" class="navbar-brand" style="font-family:'Dancing Script';font-size: 30px;"><b>Bikers & Hikers</b></a>
+    <nav class="navbar navbar-light" style="background-color:blue;">
+        <a href="#" class="navbar-brand" style="font-family:'Dancing Script';font-size: 30px;color:white;"><b>Kids Computer Entertainment System</b></a>
         <form class="form-inline">
             <div class="input-group">
                 <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2">
@@ -71,7 +90,7 @@ header("refresh: 0, ../");
                     <div class="card-body">
                         <div class="h5"><?php echo $_SESSION['username'];?></div>
                         <div class="h7 text-muted">My Bio</div>
-                        <div class="h7">Some quick example text to build on the card title and make up the bulk of the card's content.
+                        <div class="h7">Sharing love with the kids is my passion
                         </div>
                     </div>
                     <ul class="list-group list-group-flush">
@@ -82,6 +101,11 @@ header("refresh: 0, ../");
                         <li class="list-group-item">
                             <div class="h6 text-muted">Following</div>
                             <div class="h5">6758</div>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Terms</strong>
+                            <p>Only kids content allowed !</p>
+                            <p style="color:red;">Violation of terms may lead to account diactivation</p>
                         </li>
                         <li class="list-group-item"><a href="../../includes/logout.php" class="text-dark text-decoration-none">Logout <i class="fa fa-sign-out"></i></a></li>
                     </ul>
@@ -125,8 +149,12 @@ header("refresh: 0, ../");
 
                     </div>
                     <form action="../../includes/forms/edit.php" method="POST" enctype="multipart/form-data">
-                    <div class="card-body">
+                    <div class="card-body top-post">
+                        <?php if($row['file_ext'] == 'mp4'){ ?>
+                          <video class="img-fluid" src="../../includes/forms/img/<?php echo $row['file'];?>" controls></video>
+                        <?php }else{?>
                         <img class="img-fluid" src="../../includes/forms/img/<?php echo $row['file'];?>">
+                        <?php }?>
                         <br>
                         <input type="file" name="file" class="form-control" required>
                         <input type="text" class="form-control" name="title" value="<?php echo $row['title'];?>">
@@ -134,7 +162,7 @@ header("refresh: 0, ../");
                         <textarea name="message" class="form-control" id="" cols="30" rows="10"><?php echo $row['message'];?></textarea>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" name="editpost" class="btn btn-secondary"> Update</button>
+                        <button type="submit" name="editpost" class="button"> Update</button>
                         <a href="./home.php#<?php echo $_GET['pid'];?>" class="card-link text-secondary">Go Back</a>
                     </div>
                     </form>
@@ -165,10 +193,16 @@ header("refresh: 0, ../");
 
                         <?php }?>
                     </div>
+                    <!-- gif -->
+                    <img src="../../assets/imgs/kids-gif.gif" styel="float:right;" alt="kids"  width="50%">
                 </div>
             </div>
         </div>
     </div>
 <script></script>
+<!--footer-->
+<?php
+    require_once '../../includes/footer.php';
+   ?>
 </body>
 </html>
